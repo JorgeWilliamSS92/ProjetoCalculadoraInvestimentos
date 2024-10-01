@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de Investimentos</title>
+  </head>
+  <body>
+    <aside>
+      <h1>Calculadora de investimentos</h1>
+      <form id="investment-form">
+        <div class="div">
+          <label for="investment">Investimento inicial</label>
+          <div class="box-input">
+            <input type="text" value="R$" disabled class="l-border signal" />
+            <input
+              onblur="enable('investment')"
+              type="number"
+              id="investment"
+              placeholder="0.00"
+              class="r-border inputing"
+              required
+            />
+          </div>
+          <p class="p"></p>
+        </div>
+
+        <div class="div">
+          <label for="contributions">Aportes adicionais</label>
+          <div class="box-input">
+            <input type="text" value="R$" disabled class="l-border signal" />
+            <input
+              type="number"
+              id="contributions"
+              placeholder="0.00"
+              class="r-border inputing"
+            />
+          </div>
+        </div>
+
+        <div class="div div2">
+          <label for="term">Prazo</label>
+          <div class="box-input">
+            <input
+              onblur="enable('term')"
+              type="number"
+              id="term"
+              placeholder="0"
+              class="l-border inputing"
+              required
+            />
+            <select name="period" id="term-period" class="r-border">
+              <option value="monthly">Mensal</option>
+              <option value="yearly">Anual</option>
+            </select>
+          </div>
+          <p class="p"></p>
+        </div>
+
+        <div class="div div2">
+          <label for="profitability">Rentabilidade</label>
+          <div class="box-input">
+            <input type="text" value="%" disabled class="l-border signal" />
+            <input
+              type="number"
+              id="profitability"
+              placeholder="0"
+              class="inputing2"
+              required
+            />
+            <select
+              name="period"
+              id="profitability-term-period"
+              class="r-border"
+            >
+              <option value="monthly">Mensal</option>
+              <option value="yearly">Anual</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="div">
+          <label for="profit-tax">Imposto sobre lucro</label>
+          <div class="box-input">
+            <input type="text" value="%" disabled class="l-border signal" />
+            <input
+              type="number"
+              id="profit-tax"
+              placeholder="0"
+              class="r-border inputing"
+              required
+            />
+          </div>
+        </div>
+      </form>
+
+      <div class="buttons my-20 w-full gap-12">
+        <button
+          form="investment-form"
+          id="calculate"
+          class="w-2/5 py-1 rounded-lg bg-emerald-950 hover:bg-emerald-800 text-slate-200"
+        >
+          Calcular
+        </button>
+        <button
+          id="clear-button"
+          class="w-2/5 py-1 rounded-lg border-gray-500 border-2 hover:bg-emerald-950 hover:text-slate-200"
+        >
+          Limpar
+        </button>
+      </div>
+    </aside>
+
+    <main id="chartsPrincipal">
+      <section id="charts-container">
+        <div id="chart1">
+          <p>Resultado Final</p>
+          <canvas id="final-money-distribution"></canvas>
+        </div>
+
+        <div id="chart2">
+          <p>Progressão</p>
+          <canvas id="progression"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js" type="module"></script>
+    <script src="main2.js"></script>
+  </body>
+</html>

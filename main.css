@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-size: 62.5%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+  font-size: 1.8rem;
+
+  & aside {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    background-color: aquamarine;
+    width: max-content;
+
+    & h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      padding: 1rem 0rem 0rem 2rem;
+    }
+
+    & form {
+      width: 95%;
+      margin: 0rem 1rem;
+
+      & .div {
+        margin-bottom: 0rem;
+        height: 8rem;
+
+        & p {
+          font-size: 1.5rem;
+        }
+      }
+
+      & .div2 {
+        & #term {
+          width: 81%;
+        }
+        & #profitability {
+          width: 65%;
+        }
+      }
+
+      & .r-border {
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+      }
+      & .l-border {
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+      }
+
+      & .box-input {
+        width: 98%;
+
+        & .signal {
+          width: 15%;
+          text-align: center;
+        }
+
+        & .inputing {
+          width: 83%;
+          padding-left: 1rem;
+          border: 0.1rem solid aquamarine;
+        }
+
+        & .inputing2 {
+          width: 67%;
+          padding-left: 1rem;
+          border: 0.1rem solid aquamarine;
+        }
+      }
+    }
+    & .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  & #charts-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100dvh;
+    padding-left: 5rem;
+
+    & p {
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    & #chart1 {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      height: 42dvh;
+      width: 100dvh;
+      padding: 2rem;
+      margin-bottom: 2rem;
+
+      & #progression {
+        width: 100rem;
+        height: 50rem;
+      }
+    }
+
+    & #chart2 {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      height: 52dvh;
+      width: 100dvh;
+      padding: 2rem;
+    }
+  }
+}
