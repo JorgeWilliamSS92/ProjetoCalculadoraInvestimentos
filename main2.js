@@ -41,3 +41,5 @@ function clear2() {
     ps.innerHTML = "";
   }
 }
+
+//finalizado
