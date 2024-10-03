@@ -137,5 +137,5 @@ function generateValues(evt) {
   console.log(returnArray);
 }
 
-//form.addEventListener("submit", generateValues);
+//form.addEventListener("submit", generateValues); outra opção
 button.addEventListener("click", generateValues);
