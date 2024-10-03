@@ -76,8 +76,6 @@ body {
       align-items: center;
     }
   }
-<<<<<<< Updated upstream
-=======
 
   & #charts-container {
     display: flex;
@@ -119,5 +117,4 @@ body {
       padding: 2rem;
     }
   }
->>>>>>> Stashed changes
 }

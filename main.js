@@ -1,7 +1,6 @@
 import { generateReturnArray } from "./investmentGoals";
+import { Chart } from "chart.js/auto";
 
-<<<<<<< Updated upstream
-=======
 //------------------------------------------------------------------------
 //form.addEventListener("submit", generateValues);
 const form = document.getElementById("investment-form");
@@ -31,8 +30,20 @@ function clear2() {
 
 const finalMoneyChart = document.getElementById("final-money-distribution");
 const progressionChart = document.getElementById("progression");
->>>>>>> Stashed changes
 const button = document.getElementById("calculate");
+let chartDoughnut = {};
+let chartBar = {};
+
+function checking(obj) {
+  return Object.keys(obj).length === 0;
+}
+
+function isEmpity() {
+  if (!checking(chartBar) && !checking(chartDoughnut)) {
+    chartBar.destroy();
+    chartDoughnut.destroy();
+  }
+}
 
 function generateValues(evt) {
   evt.preventDefault();
@@ -45,6 +56,7 @@ function generateValues(evt) {
     "profitability-term-period"
   ).value;
   const profitTax = Number(document.getElementById("profit-tax").value);
+  isEmpity();
 
   const returnArray = generateReturnArray(
     investment,
@@ -54,6 +66,73 @@ function generateValues(evt) {
     profitability,
     profitabilityPeriod
   );
+
+  function format(value) {
+    if (value > 1) {
+      return value.toFixed(2);
+    }
+  }
+
+  const returnValues = returnArray[returnArray.length - 1];
+
+  chartDoughnut = new Chart(finalMoneyChart, {
+    type: "doughnut",
+    data: {
+      labels: ["Total Investido", "Rendimentos", "Imposto"],
+      datasets: [
+        {
+          label: "Valor R$",
+          data: [
+            format(returnValues.startingAmount),
+            format(returnValues.totalInterestReturn * (1 - profitTax / 100)),
+            format(returnValues.totalInterestReturn * (profitTax / 100)),
+          ],
+          backgroundColor: [
+            "rgb(255, 99, 132)",
+            "rgb(54, 162, 235)",
+            "rgb(255, 205, 86)",
+          ],
+          hoverOffset: 4,
+        },
+      ],
+    },
+  });
+
+  chartBar = new Chart(progressionChart, {
+    type: "bar",
+    data: {
+      labels: returnArray.map((monthObject) => monthObject.month),
+      datasets: [
+        {
+          label: "Investimento",
+          data: returnArray.map((investimentObject) =>
+            format(investimentObject.startingAmount)
+          ),
+          backgroundColor: "rgb(255, 99, 132)",
+        },
+        {
+          label: "Rendimento",
+          data: returnArray.map((interesReturnObject) =>
+            format(interesReturnObject.totalInterestReturn)
+          ),
+
+          backgroundColor: "rgb(54, 162, 235)",
+        },
+      ],
+    },
+
+    options: {
+      responsive: true,
+      scales: {
+        x: {
+          stacked: true,
+        },
+        y: {
+          stacked: true,
+        },
+      },
+    },
+  });
 
   console.log(returnArray);
 }
