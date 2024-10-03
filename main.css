@@ -20,7 +20,6 @@ body {
     flex-flow: column nowrap;
     justify-content: space-between;
     background-color: aquamarine;
-    width: max-content;
 
     & h1 {
       font-size: 3rem;
@@ -41,15 +40,6 @@ body {
         }
       }
 
-      & .div2 {
-        & #term {
-          width: 81%;
-        }
-        & #profitability {
-          width: 65%;
-        }
-      }
-
       & .r-border {
         border-top-right-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
@@ -60,7 +50,7 @@ body {
       }
 
       & .box-input {
-        width: 98%;
+        width: 100%;
 
         & .signal {
           width: 15%;
@@ -86,6 +76,8 @@ body {
       align-items: center;
     }
   }
+<<<<<<< Updated upstream
+=======
 
   & #charts-container {
     display: flex;
@@ -127,4 +119,5 @@ body {
       padding: 2rem;
     }
   }
+>>>>>>> Stashed changes
 }
