@@ -10,9 +10,9 @@ html {
 
 body {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr;
-  height: 100vh;
+  height: 100dvh;
   font-size: 1.8rem;
 
   & aside {
@@ -20,6 +20,7 @@ body {
     flex-flow: column nowrap;
     justify-content: space-between;
     background-color: aquamarine;
+    width: max-content;
 
     & h1 {
       font-size: 3rem;
@@ -40,6 +41,15 @@ body {
         }
       }
 
+      & .div2 {
+        & #term {
+          width: 81%;
+        }
+        & #profitability {
+          width: 65%;
+        }
+      }
+
       & .r-border {
         border-top-right-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
@@ -50,7 +60,7 @@ body {
       }
 
       & .box-input {
-        width: 100%;
+        width: 98%;
 
         & .signal {
           width: 15%;
@@ -77,34 +87,18 @@ body {
     }
   }
 
-  & #charts-container {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+  & #chartsPrincipal {
     height: 100dvh;
-    width: 120%;
-    padding-left: 5rem;
-
-    & p {
-      font-weight: 700;
-      font-size: 2rem;
-    }
+    padding-left: 3rem;
 
     & #chart1 {
       display: flex;
       flex-flow: column;
       justify-content: center;
       align-items: center;
-      height: 42dvh;
-      width: 110%;
+      height: 40dvh;
       padding: 2rem;
       margin-bottom: 2rem;
-
-      & #progression {
-        width: 100rem;
-        height: 50rem;
-      }
     }
 
     & #chart2 {
@@ -112,9 +106,8 @@ body {
       flex-flow: column;
       justify-content: center;
       align-items: center;
-      height: 52dvh;
-      width: 110%;
-      padding: 2rem;
+      height: 55dvh;
+      padding: 1rem;
     }
   }
 }

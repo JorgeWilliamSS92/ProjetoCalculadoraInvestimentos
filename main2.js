@@ -27,6 +27,7 @@ function clear2() {
   const p = document.querySelectorAll("p");
   const input1 = document.getElementById("investment");
   const input2 = document.getElementById("term");
+  isEmpity();
 
   form["investment"].value = "";
   form["contributions"].value = "";
