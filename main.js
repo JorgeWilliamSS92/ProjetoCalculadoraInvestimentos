@@ -26,6 +26,7 @@ function clear2() {
     ps.innerHTML = "";
   }
 }
+
 //------------------------------------------------------------------------
 
 const finalMoneyChart = document.getElementById("final-money-distribution");
@@ -137,5 +138,5 @@ function generateValues(evt) {
   console.log(returnArray);
 }
 
-//form.addEventListener("submit", generateValues); outra opção
+//form.addEventListener("submit", generateValues);
 button.addEventListener("click", generateValues);
