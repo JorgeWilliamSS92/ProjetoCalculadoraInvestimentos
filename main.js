@@ -139,4 +139,4 @@ function generateValues(evt) {
 }
 
 //form.addEventListener("submit", generateValues);
-button.addEventListener("click", generateValues);
+//button.addEventListener("click", generateValues);
