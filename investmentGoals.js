@@ -43,7 +43,7 @@ export function generateReturnArray(
     const totalInterestReturn = totalAmount - investedAmount;
 
     returnArray.push({
-      startingAmount: investedAmount,
+      investedAmount: investedAmount,
       interestReturn: interestReturn,
       totalInterestReturn: totalInterestReturn,
       month: timeReference,
