@@ -89,6 +89,10 @@ body {
 
   & #chartsPrincipal {
     height: 100dvh;
+    overflow-y: auto;
+
+    & #charts-container {
+    }
 
     & #chart1 {
       display: flex;
@@ -107,6 +111,7 @@ body {
       align-items: center;
       height: 55dvh;
       padding: 1rem;
+      margin-bottom: 5rem;
     }
   }
 

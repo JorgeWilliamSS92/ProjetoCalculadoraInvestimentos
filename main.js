@@ -108,64 +108,64 @@ function generateValues(evt) {
 
   const returnValues = returnArray[returnArray.length - 1];
 
-  // chartDoughnut = new Chart(finalMoneyChart, {
-  //   type: "doughnut",
-  //   data: {
-  //     labels: ["Total Investido", "Rendimentos", "Imposto"],
-  //     datasets: [
-  //       {
-  //         label: "Valor R$",
-  //         data: [
-  //           format(returnValues.investedAmount),
-  //           format(returnValues.totalInterestReturn * (1 - profitTax / 100)),
-  //           format(returnValues.totalInterestReturn * (profitTax / 100)),
-  //         ],
-  //         backgroundColor: [
-  //           "rgb(255, 99, 132)",
-  //           "rgb(54, 162, 235)",
-  //           "rgb(255, 205, 86)",
-  //         ],
-  //         hoverOffset: 4,
-  //       },
-  //     ],
-  //   },
-  // });
+  chartDoughnut = new Chart(finalMoneyChart, {
+    type: "doughnut",
+    data: {
+      labels: ["Total Investido", "Rendimentos", "Imposto"],
+      datasets: [
+        {
+          label: "Valor R$",
+          data: [
+            format(returnValues.investedAmount),
+            format(returnValues.totalInterestReturn * (1 - profitTax / 100)),
+            format(returnValues.totalInterestReturn * (profitTax / 100)),
+          ],
+          backgroundColor: [
+            "rgb(255, 99, 132)",
+            "rgb(54, 162, 235)",
+            "rgb(255, 205, 86)",
+          ],
+          hoverOffset: 4,
+        },
+      ],
+    },
+  });
 
-  // chartBar = new Chart(progressionChart, {
-  //   type: "bar",
-  //   data: {
-  //     labels: returnArray.map((monthObject) => monthObject.month),
-  //     datasets: [
-  //       {
-  //         label: "Investimento",
-  //         data: returnArray.map((investimentObject) =>
-  //           format(investimentObject.investedAmount)
-  //         ),
-  //         backgroundColor: "rgb(255, 99, 132)",
-  //       },
-  //       {
-  //         label: "Rendimento",
-  //         data: returnArray.map((interesReturnObject) =>
-  //           format(interesReturnObject.totalInterestReturn)
-  //         ),
+  chartBar = new Chart(progressionChart, {
+    type: "bar",
+    data: {
+      labels: returnArray.map((monthObject) => monthObject.month),
+      datasets: [
+        {
+          label: "Investimento",
+          data: returnArray.map((investimentObject) =>
+            format(investimentObject.investedAmount)
+          ),
+          backgroundColor: "rgb(255, 99, 132)",
+        },
+        {
+          label: "Rendimento",
+          data: returnArray.map((interesReturnObject) =>
+            format(interesReturnObject.totalInterestReturn)
+          ),
 
-  //         backgroundColor: "rgb(54, 162, 235)",
-  //       },
-  //     ],
-  //   },
+          backgroundColor: "rgb(54, 162, 235)",
+        },
+      ],
+    },
 
-  //   options: {
-  //     responsive: true,
-  //     scales: {
-  //       x: {
-  //         stacked: true,
-  //       },
-  //       y: {
-  //         stacked: true,
-  //       },
-  //     },
-  //   },
-  // });
+    options: {
+      responsive: true,
+      scales: {
+        x: {
+          stacked: true,
+        },
+        y: {
+          stacked: true,
+        },
+      },
+    },
+  });
 
   console.log(returnArray);
 
