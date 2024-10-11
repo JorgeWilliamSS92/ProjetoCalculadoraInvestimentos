@@ -88,16 +88,45 @@ body {
     }
   }
 
+  /* segunda parte do código onde é tratado os gráficos */
   & #chartsPrincipal {
     height: 100dvh;
-    width: 100%;
     overflow-x: auto;
+    scrollbar-width: none;
 
     & #carrossel {
       display: flex;
-      /* width: 200%; */
-      width: 100%;
+      position: relative;
       gap: 2rem;
+
+      & .button-left,
+      .button-right {
+        background-color: rgb(155, 154, 154);
+        color: rgb(61, 61, 61);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        opacity: 35%;
+        width: 2rem;
+        font-weight: 700;
+        font-size: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s ease-in-out;
+      }
+      & .button-left {
+        left: 100;
+      }
+      & .button-right {
+        right: 0;
+      }
+
+      & .button-left:hover,
+      .button-right:hover {
+        background-color: rgb(61, 61, 61);
+        color: white;
+      }
     }
 
     & #chart1 {
@@ -126,45 +155,46 @@ body {
     flex-shrink: 0;
     flex-flow: column;
   }
+}
 
-  & #table-container {
-    display: flex;
-    flex-flow: column;
-    flex-basis: 100%;
-    flex-shrink: 0;
-    height: 95dvh;
-    padding: 0rem;
-    overflow-y: auto;
-    margin-top: -0.2rem;
-    padding-right: 0.2rem;
-    padding-left: 0rem;
+& #table-container {
+  display: flex;
+  flex-flow: column;
+  flex-basis: 100%;
+  flex-shrink: 0;
+  height: 99dvh;
+  padding: 0rem;
+  overflow-y: auto;
+  margin-top: -0.2rem;
+  padding-right: 0.2rem;
+  scrollbar-width: none;
 
-    & p {
-      text-align: center;
-      font-size: 2rem;
+  & p {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 2rem;
+  }
+  & table {
+    width: 100%;
+    height: max-content;
+    margin: 0rem 0.5rem 0rem 0.5rem;
+
+    & th {
+      padding: 0.2rem 0rem;
+      background-color: rgb(35, 99, 184);
+      border: 1px solid white;
+      color: white;
+      font-size: 1.8rem;
+      position: sticky;
       font-weight: 500;
-      margin: 2rem;
+      top: 0;
     }
-    & table {
-      width: 100%;
-      height: max-content;
 
-      & th {
-        padding: 0.2rem 0rem;
-        background-color: rgb(35, 99, 184);
-        border: 1px solid white;
-        color: white;
-        font-size: 1.8rem;
-        position: sticky;
-        font-weight: 500;
-        top: 0;
-      }
-
-      & td {
-        text-align: center;
-        border: 1px solid white;
-        font-size: 1.6rem;
-      }
+    & td {
+      text-align: center;
+      border: 1px solid white;
+      font-size: 1.6rem;
     }
   }
 }

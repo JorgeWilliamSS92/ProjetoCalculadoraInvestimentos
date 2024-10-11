@@ -172,5 +172,22 @@ function generateValues(evt) {
   verTable(columnsArray, returnArray, "results-table");
 }
 
+//botoes de scroll left e right
+
+const main = document.getElementById("chartsPrincipal");
+const carrossel = document.getElementById("carrossel");
+const buttonLeft = document.getElementById("left");
+const buttonRight = document.getElementById("right");
+
+buttonRight.addEventListener("click", () => {
+  main.scrollLeft += main.clientWidth;
+  console.log("scrollright");
+});
+
+buttonLeft.addEventListener("click", () => {
+  main.scrollLeft -= main.clientWidth;
+  console.log("scrollleft");
+});
+
 //form.addEventListener("submit", generateValues);
 button.addEventListener("click", generateValues);
