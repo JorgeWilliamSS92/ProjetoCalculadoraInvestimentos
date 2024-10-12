@@ -14,6 +14,9 @@ export function verTable(headInformation, rowData, tableId) {
     throw new Error("O elemento Table não existe no arquivo HTML.");
   }
 
+  const table = document.getElementById("results-table");
+  table.innerHTML = "";
+
   create_thead(tableElement, headInformation);
   create_tbody(headInformation, rowData, tableElement);
 }

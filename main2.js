@@ -18,26 +18,4 @@ function enable(n) {
 }
 
 //form.addEventListener("submit", generateValues);
-const form = document.getElementById("investment-form");
-const clear = document.getElementById("clear-button");
-
-clear.addEventListener("click", clear2);
-
-function clear2() {
-  const p = document.querySelectorAll("p");
-  const input1 = document.getElementById("investment");
-  const input2 = document.getElementById("term");
-  isEmpity();
-
-  form["investment"].value = "";
-  form["contributions"].value = "";
-  form["term"].value = "";
-  form["profitability"].value = "";
-  form["profit-tax"].value = "";
-
-  input1.style = "border: 0.2rem solid aquamarine; border-radius:0.5rem";
-  input2.style = "border: 0.2rem solid aquamarine; border-radius:0.5rem";
-  for (const ps of p) {
-    ps.innerHTML = "";
-  }
-}
+//form.addEventListener("submit", generateValues);

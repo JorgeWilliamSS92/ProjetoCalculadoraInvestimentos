@@ -93,6 +93,7 @@ body {
     height: 100dvh;
     overflow-x: auto;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 
     & #carrossel {
       display: flex;

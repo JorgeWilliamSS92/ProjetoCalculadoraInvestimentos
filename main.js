@@ -10,9 +10,10 @@ const clear = document.getElementById("clear-button");
 clear.addEventListener("click", clear2);
 
 function clear2() {
-  const p = document.querySelectorAll("p");
+  const p = document.querySelectorAll("ps");
   const input1 = document.getElementById("investment");
   const input2 = document.getElementById("term");
+  const table = document.getElementById("results-table");
   isEmpity();
 
   form["investment"].value = "";
@@ -21,6 +22,7 @@ function clear2() {
   form["profitability"].value = "";
   form["profit-tax"].value = "";
 
+  table.innerHTML = "";
   input1.style = "border: 0.2rem solid aquamarine; border-radius:0.5rem";
   input2.style = "border: 0.2rem solid aquamarine; border-radius:0.5rem";
   for (const ps of p) {
@@ -173,9 +175,8 @@ function generateValues(evt) {
 }
 
 //botoes de scroll left e right
-
 const main = document.getElementById("chartsPrincipal");
-const carrossel = document.getElementById("carrossel");
+//const carrossel = document.getElementById("carrossel");
 const buttonLeft = document.getElementById("left");
 const buttonRight = document.getElementById("right");
 
